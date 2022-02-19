@@ -1,9 +1,6 @@
 <template>
     <section>
         <Header/>
-        <span>
-            Internal layout
-        </span>
 
         <router-view />
     </section>

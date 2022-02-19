@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <main>
-   <h1>Home</h1>
-  </main>
+<span></span>
 </template>
 
 <style scoped>
