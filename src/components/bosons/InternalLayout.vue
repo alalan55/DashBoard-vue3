@@ -2,7 +2,10 @@
     <section>
         <Header/>
 
-        <router-view />
+        <div class="content">
+            <router-view />
+        </div>
+        
     </section>
 </template>
 
@@ -17,6 +20,13 @@ import Header from '../organisms/HeaderComponent.vue'
 
 <style  scoped>
 section{
-    border: 1px solid red;
+}
+.content{
+    border: 1px solid;
+    width: calc(100vw - 230px);
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    
 }
 </style>
