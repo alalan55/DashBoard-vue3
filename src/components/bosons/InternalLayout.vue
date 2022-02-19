@@ -18,7 +18,6 @@ export default {
 
 <style  scoped>
 .content {
-  /* border: 1px solid; */
   padding: 0.8rem;
   width: calc(100vw - 230px);
   min-height: 100vh;
