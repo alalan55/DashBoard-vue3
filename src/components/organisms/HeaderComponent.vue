@@ -47,7 +47,7 @@
             </figure>
 
             <div class="name">
-              <span>Fulano da silva</span>
+              <span>Alan de Oliveira</span>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
             </figure>
 
             <div class="name">
-              <span>Fulano da silva</span>
+              <span>Alan de Oliveira</span>
             </div>
           </div>
         </div>
