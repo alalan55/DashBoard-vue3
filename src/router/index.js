@@ -6,11 +6,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
       component: () => import('../components/bosons/InternalLayout.vue'),
       children: [
         {
           path: '',
+          name: 'home',
           component: HomeView
         },
         {

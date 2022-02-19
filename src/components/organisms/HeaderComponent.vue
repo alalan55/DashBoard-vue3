@@ -1,56 +1,133 @@
 <template>
   <header>
     <nav>
-      <div class="btn-close-nav">
+      <div class="btn-close-nav" @click="openOrclose">
         <img src="../../assets/icons/dots.svg" alt="home icon" />
       </div>
 
-      <ul class="items">
-        <li class="item">
-          <router-link :to="{ name: 'home' }">
-            <img src="../../assets/icons/home.svg" alt="home icon" />
-            <span> Home</span>
-          </router-link>
-        </li>
-        <li class="item">
-          <router-link :to="{ name: 'projects' }">
-            <img src="../../assets/icons/projects.svg" alt="home icon" />
-            <span> Projects</span>
-          </router-link>
-        </li>
-        <li class="item">
-          <router-link :to="{ name: 'teamMembers' }">
-            <img src="../../assets/icons/user.svg" alt="home icon" />
-            <span> Team Members</span>
-          </router-link>
-        </li>
-        <li class="item">
-          <router-link :to="{ name: 'stats' }">
-            <img src="../../assets/icons/stats.svg" alt="home icon" />
-            <span> Stats</span>
-          </router-link>
-        </li>
-        <li class="item">
-          <router-link :to="{ name: 'settings' }">
-            <img src="../../assets/icons/settings.svg" alt="home icon" />
-            <span> Settings</span>
-          </router-link>
-        </li>
-      </ul>
+      <div class="content-nav" v-if="isToShow">
+        <ul class="items">
+          <li class="item">
+            <router-link :to="{ name: 'home' }">
+              <img src="../../assets/icons/home.svg" alt="home icon" />
+              <span> Home</span>
+            </router-link>
+          </li>
+          <li class="item">
+            <router-link :to="{ name: 'projects' }">
+              <img src="../../assets/icons/projects.svg" alt="home icon" />
+              <span> Projects</span>
+            </router-link>
+          </li>
+          <li class="item">
+            <router-link :to="{ name: 'teamMembers' }">
+              <img src="../../assets/icons/user.svg" alt="home icon" />
+              <span> Team Members</span>
+            </router-link>
+          </li>
+          <li class="item">
+            <router-link :to="{ name: 'stats' }">
+              <img src="../../assets/icons/stats.svg" alt="home icon" />
+              <span> Stats</span>
+            </router-link>
+          </li>
+          <li class="item">
+            <router-link :to="{ name: 'settings' }">
+              <img src="../../assets/icons/settings.svg" alt="home icon" />
+              <span> Settings</span>
+            </router-link>
+          </li>
+        </ul>
 
-      <div class="profile">
-        <figure class="image-profile">
-          <img src="../../assets/icons/user.svg" alt="user image profile" />
-          <div class="dot-active"></div>
-        </figure>
+        <div class="profile">
+          <figure class="image-profile">
+            <img src="../../assets/icons/user.svg" alt="user image profile" />
+            <div class="dot-active"></div>
+          </figure>
 
-        <div class="name">
-          <span>Fulano da silva</span>
+          <div class="name">
+            <span>Fulano da silva</span>
+          </div>
+        </div>
+      </div>
+     <div class="content-nav" v-if="!telaMobile">
+        <ul class="items">
+          <li class="item">
+            <router-link :to="{ name: 'home' }">
+              <img src="../../assets/icons/home.svg" alt="home icon" />
+              <span> Home</span>
+            </router-link>
+          </li>
+          <li class="item">
+            <router-link :to="{ name: 'projects' }">
+              <img src="../../assets/icons/projects.svg" alt="home icon" />
+              <span> Projects</span>
+            </router-link>
+          </li>
+          <li class="item">
+            <router-link :to="{ name: 'teamMembers' }">
+              <img src="../../assets/icons/user.svg" alt="home icon" />
+              <span> Team Members</span>
+            </router-link>
+          </li>
+          <li class="item">
+            <router-link :to="{ name: 'stats' }">
+              <img src="../../assets/icons/stats.svg" alt="home icon" />
+              <span> Stats</span>
+            </router-link>
+          </li>
+          <li class="item">
+            <router-link :to="{ name: 'settings' }">
+              <img src="../../assets/icons/settings.svg" alt="home icon" />
+              <span> Settings</span>
+            </router-link>
+          </li>
+        </ul>
+
+        <div class="profile">
+          <figure class="image-profile">
+            <img src="../../assets/icons/user.svg" alt="user image profile" />
+            <div class="dot-active"></div>
+          </figure>
+
+          <div class="name">
+            <span>Fulano da silva</span>
+          </div>
         </div>
       </div>
     </nav>
   </header>
 </template>
+
+<script>
+import { ref, computed, onBeforeUnmount, onMounted} from "vue";
+export default {
+  setup() {
+    const show = ref(false);
+    const winWidth = ref(window.innerWidth);
+    const telaMobile = computed(() => (winWidth.value > 800 ? false : true));
+    const isToShow = computed(() => telaMobile.value && show.value ? true : false)
+    const resizeScreen = () => {winWidth.value = window.innerWidth}
+
+
+    const openOrclose = () => {
+      if(telaMobile.value){
+        show.value == true ? (show.value = false) : (show.value = true);
+      }
+    }
+
+    onMounted(() =>{
+         window.addEventListener('resize',  resizeScreen)
+    })
+
+    onBeforeUnmount(() => {
+      window.removeEventListener("resize", resizeScreen);
+    });
+
+    return { show, openOrclose, telaMobile, isToShow };
+  },
+};
+</script>
 
 <style  scoped>
 header {
@@ -63,6 +140,7 @@ nav {
   height: 100vh;
   width: 230px;
   border-right: 1px solid rgb(230, 230, 230);
+  transition: 0.1s ease-in-out;
 }
 
 /* BOTAO DE FECHAR NAVBAR */
@@ -76,6 +154,11 @@ nav {
   cursor: pointer;
 }
 /* FIM DO BOTAO DE FECHAR NAVBAR */
+
+.content-nav {
+  height: 80vh;
+  transition: 0.1s ease-in-out;
+}
 
 .items {
 }
@@ -135,4 +218,29 @@ nav {
   padding: 0.5rem 0;
 }
 /* FIM DE IMAGEM DE PERFIL */
+
+@media screen and (max-width: 800px) {
+  header {
+    /* border: 5px solid red; */
+    z-index: 1 !important;
+  }
+  nav {
+    position: static;
+    height: 70px;
+    width: 100%;
+    -webkit-box-shadow: -2px 3px 13px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: -2px 3px 13px 1px rgba(0, 0, 0, 0.05);
+    z-index: 99999 !important;
+  }
+  nav .content-nav {
+    position: fixed;
+    left: 0;
+    top: 71px;
+    height: calc(100vh - 70px);
+    width: 230px;
+    border-right: 1px solid rgb(230, 230, 230);
+    transition: 0.1s ease-in-out;
+    background: white;
+  }
+}
 </style>
