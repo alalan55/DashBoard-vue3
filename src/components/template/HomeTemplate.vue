@@ -1,5 +1,6 @@
 <template>
   <div class="home-template">
+
     <div class="card-1">
       <div class="input">
         <input type="text" placeholder="Search for stats" />
@@ -15,9 +16,52 @@
             <img src="@/assets/icons/filter.svg" alt="">
         </div>
     </div>
+
+
     <div class="card-2">
-      <span>card 2</span>
+      <div class="card-2-content">
+          <div class="item-card">
+              <div class="img">
+                  <figure>
+                      <img src="@/assets/icons/eye.svg" alt="">
+                  </figure>
+                  <span class="sub-text">Views</span>
+              </div>
+              <div class="value">
+                  <span class="value-title">500</span>
+                    <span class="sub-text">Per Day</span>
+              </div>
+          </div>
+          <div class="item-card">
+              <div class="img">
+                  <figure>
+                      <img src="@/assets/icons/pin.svg" alt="">
+                  </figure>
+                  <span class="sub-text">Visits</span>
+              </div>
+              <div class="value">
+                   <span class="value-title">200</span>
+                    <span class="sub-text">Per minutes</span>
+              </div>
+          </div>
+          <div class="item-card">
+             <div class="img">
+                  <figure>
+                      <img src="@/assets/icons/store.svg" alt="">
+                  </figure>
+                  <span class="sub-text">Orders</span>
+             </div>
+              <div class="value">
+                   <span class="value-title">5100</span>
+                    <span class="sub-text">Per Day</span>
+              </div>
+          </div>
+      </div>
     </div>
+
+
+
+
     <div class="card-3">
       <span>card 3</span>
     </div>
@@ -37,6 +81,11 @@
 </template>
 
 <style  scoped>
+.sub-text{
+    font-weight: 500;
+    color:#afafae;
+    font-size: .8em;
+}
 .home-template {
   color: black;
   min-height: 96vh;
@@ -50,6 +99,58 @@
     "card-3 card-4 card-7"
     "card-5 card-6 card-7";
 }
+.home-template > div {
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.03);
+  box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.03);
+  padding: 0.8rem 1rem;
+}
+
+/* CARD 2 */
+.card-2 {
+  grid-area: card-2;
+  background: #f9f8f3;
+}
+
+.card-2-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-2-content >div {
+    flex: 1 1 200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+.card-2-content> div .img figure {
+    background: #e4e0d5;
+    width: 30px;
+    height: 30px;
+    padding: .2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-2-content> div .img figure  img{
+   width: 80%;
+}
+.card-2-content> div .value span{
+   display: block;
+}
+.card-2-content> div .value .value-title{
+   font-size: 1.8em;
+   font-weight: 500;
+}
+
+
+/* FIM DO CARD 2 */
 
 
 
@@ -114,9 +215,7 @@
 
 
 
-.card-2 {
-  grid-area: card-2;
-}
+
 .card-3 {
   grid-area: card-3;
 }
@@ -132,13 +231,7 @@
 .card-7 {
   grid-area: card-7;
 }
-.home-template > div {
-  border: 1px solid rgb(223, 223, 223);
-  border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.03);
-  box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.03);
-  padding: 0.8rem 1rem;
-}
+
 
 @media screen and (max-width: 800px) {
   .home-template {
