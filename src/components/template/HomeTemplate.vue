@@ -324,7 +324,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: .8rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   margin: .7rem 0;
 }
@@ -338,7 +338,25 @@
   background: #e2e2e2;
 }
 .itens-card-7 .img-card-7 img{
-  width: 50%;
+  width: 60%;
+}
+
+.data-card-7{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.data-card-7 span{
+  display: block;
+}
+.data-card-7 .title-data-card-7{
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.data-card-7 .sub-title-data-card-7{
+  font-size: .7em;
+  color: #a7a7a7;
 }
 /* FIM DO CARD 7 */
 
