@@ -27,9 +27,10 @@ export default {
 
 @media screen and (max-width: 800px){
   .content{
-    position: static;
+    position: relative;
     min-height: calc(100vh - 70px);
     width: 100%;
+    padding-top: 5rem;
   }
 }
 </style>
