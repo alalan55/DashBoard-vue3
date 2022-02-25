@@ -246,9 +246,10 @@ nav {
     z-index: 1 !important;
   }
   nav {
-    position: static;
+    position: fixed;
     height: 70px;
     width: 100%;
+    background: white;
     -webkit-box-shadow: -2px 3px 13px 1px rgba(0, 0, 0, 0.05);
     box-shadow: -2px 3px 13px 1px rgba(0, 0, 0, 0.05);
     z-index: 99999 !important;
