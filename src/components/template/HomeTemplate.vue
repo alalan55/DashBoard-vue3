@@ -81,7 +81,7 @@
     </div>
 
     <div class="card-4">
-       <div class="small-content-card">
+      <div class="small-content-card">
         <div class="conts">
           <div>
             <div class="title-small">
@@ -127,6 +127,7 @@
         </div>
       </div>
     </div>
+
     <div class="card-6">
       <div class="small-content-card">
         <div class="conts">
@@ -150,8 +151,52 @@
         </div>
       </div>
     </div>
+
     <div class="card-7">
-      <span>card 7</span>
+      <div class="content-card-7">
+        <div class="title-card-7">
+          <span>Sales Revenue</span>
+        </div>
+
+        <div class="itens-card-7">
+          <div class="item-card-7">
+            <div class="img-card-7">
+              <img src="@/assets/icons/percent.svg" alt="percent" class="icon-percent" />
+            </div>
+            <div class="data-card-7">
+              <span class="title-data-card-7">230k</span>
+              <span class="sub-title-data-card-7">Sales</span>
+            </div>
+          </div>
+          <div class="item-card-7">
+            <div class="img-card-7">
+              <img src="@/assets/icons/user.svg" alt="user" class="icon-user" />
+            </div>
+            <div class="data-card-7">
+              <span class="title-data-card-7">8.549k</span>
+              <span class="sub-title-data-card-7">Customers</span>
+            </div>
+          </div>
+          <div class="item-card-7">
+            <div class="img-card-7">
+              <img src="@/assets/icons/box.svg" alt="box" class="icon-box" />
+            </div>
+            <div class="data-card-7">
+              <span class="title-data-card-7">1.423k</span>
+              <span class="sub-title-data-card-7">Products</span>
+            </div>
+          </div>
+          <div class="item-card-7">
+            <div class="img-card-7">
+              <img src="@/assets/icons/pie.svg" alt="pie" class="icon-pie" />
+            </div>
+            <div class="data-card-7">
+              <span class="title-data-card-7">$9745</span>
+              <span class="sub-title-data-card-7">Revenue</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -166,7 +211,7 @@
   color: black;
   min-height: 96vh;
   display: grid;
-  gap: 0.5rem;
+  gap: 0.6rem;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
@@ -176,10 +221,10 @@
     "card-5 card-6 card-7";
 }
 .home-template > div {
-  border: 1px solid rgb(223, 223, 223);
-  border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.03);
-  box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.03);
+  /* border: 1px solid rgb(223, 223, 223); */
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.05);
   padding: 0.8rem 1rem;
 }
 
@@ -194,71 +239,108 @@
 .small-content-card > div {
   flex: 1 1 100px;
   height: 100%;
-  
 }
-.small-content-card .conts{
+.small-content-card .conts {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.small-content-card .conts .title-small span{
+.small-content-card .conts .title-small span {
   font-weight: 600;
   font-size: 1.2em;
 }
-.small-content-card .conts .subtitle-small span{
-  font-size: .8em;
+.small-content-card .conts .subtitle-small span {
+  font-size: 0.8em;
   color: rgb(138, 138, 138);
 }
-.small-content-card .conts .value-small span{
+.small-content-card .conts .value-small span {
   font-size: 1.6em;
   font-weight: 700;
 }
 
-.small-content-card .percentage{
+.small-content-card .percentage {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
-.small-content-card .percentage span{
+.small-content-card .percentage span {
   font-weight: 700;
   font-size: 1.4em;
 }
 
 /* FIM SMALL CONTENT STYLES */
 
-
-
-
+/* CARD 1 */
+.card-1 {
+  background: none !important;
+  box-shadow: none !important;
+}
+/* FIM DO CARD 1 */
 /* CARD 3 */
-.card-3{
+.card-3 {
   background: #ffeee2;
 }
 /* FIM DO CARD 3 */
 
-
-
 /* CARD 4 */
-.card-4{
+.card-4 {
   background: #eefcef;
 }
 /* FIM DO CARD 4 */
 
-
 /* CARD 5 */
-.card-5{
+.card-5 {
   background: #e6f5fa;
 }
 /* FIM DO CARD 5 */
 
-
 /* CARD 6 */
-.card-6{
+.card-6 {
   background: #f4f5f9;
 }
 /* FIM DO CARD 6 */
 
-
+/* CARD 7 */
+.card-7 {
+  background: black;
+  color: white;
+}
+.content-card-7 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title-card-7 {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+.itens-card-7{
+}
+.itens-card-7>div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  flex-wrap: wrap;
+  margin: .7rem 0;
+}
+.itens-card-7 .img-card-7{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e2e2e2;
+}
+.itens-card-7 .img-card-7 img{
+  width: 50%;
+}
+/* FIM DO CARD 7 */
 
 /* CARD 2 */
 .card-2 {
