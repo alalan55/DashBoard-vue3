@@ -490,5 +490,15 @@
       "card-7 card-7"
       "card-7 card-7";
   }
+
+  .home-template>div>div{
+    border: 2px solid red !important;
+    /* height: auto !important; */
+    min-height: 10vh !important;
+
+    /* BUSCAR FORMA DE COMPONENTE SE AJUSTAR PERFEITAMENTE, 
+    USANDO HEIGHT AUTO FUNCIONA, MAS FICA BIZARRO, VERIFICAR
+    MELHOR ISSO AE */
+  }
 }
 </style>
